@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "airbnb-base"
+  ],
+  "rules": {
+    "accessor-pairs": "error",
+    "brace-style": ["error", "1tbs"],
+    "curly": ["error", "all"],
+    "camelcase": ["error", { "properties": "always" }],
+    "linebreak-style": "off",
+    "max-statements-per-line": ["error", { "max": 1 }],
+    "no-cond-assign": ["error", "except-parens"],
+    "no-negated-in-lhs": "error",
+    "no-plusplus": "off",
+    "no-useless-call": "error",
+    "operator-linebreak": "error",
+    "prefer-destructuring": "off",
+    "radix": ["error", "as-needed"]
+  }
+}
