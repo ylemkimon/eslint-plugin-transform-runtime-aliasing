@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-transform-runtime-aliasing",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "ESLint plugin for checking functions that is aliased/polyfilled by babel-plugin-transform-runtime",
   "keywords": [
     "eslint",
@@ -19,7 +19,7 @@
     "eslint-plugin-import": "^2.13.0"
   },
   "peerDependencies": {
-    "eslint": "^4.19.1"
+    "eslint": "^4 || ^5"
   },
   "scripts": {
     "test": "eslint index.js index.test.js && node index.test.js"
