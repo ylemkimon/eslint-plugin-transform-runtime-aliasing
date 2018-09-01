@@ -14,6 +14,7 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
     'var object = Object["assign"]({});',
     'var symbol = global.Symbol();',
     'var map = new global["Map"]();',
+    'var object = require("core-js/library/fn/object/assign")({});',
     {
       code: 'var object = Object["assign"]({});',
       options: [{ babelVersion: 6 }],
@@ -47,6 +48,7 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
         data: {
           name: 'Object.assign',
           alt: 'Object["assign"]',
+          corejs: 'object/assign',
         },
       }],
     },
@@ -57,6 +59,7 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
         data: {
           name: 'Symbol',
           alt: '(global|window|self).Symbol',
+          corejs: 'symbol',
         },
       }],
     },
@@ -68,6 +71,7 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
         data: {
           name: 'Object.assign',
           alt: 'Object["assign"]',
+          corejs: 'object/assign',
         },
       }],
     },
@@ -79,6 +83,7 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
         data: {
           name: 'Symbol',
           alt: '(global|window|self).Symbol',
+          corejs: 'symbol',
         },
       }],
     },
@@ -90,6 +95,7 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
         data: {
           name: 'Object.assign',
           alt: 'Object["assign"]',
+          corejs: 'object/assign',
         },
       }],
     },
@@ -101,6 +107,7 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
         data: {
           name: 'Symbol',
           alt: '(global|window|self).Symbol',
+          corejs: 'symbol',
         },
       }],
     },
@@ -112,6 +119,7 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
         data: {
           name: 'Object.assign',
           alt: 'Object["assign"]',
+          corejs: 'object/assign',
         },
       }],
     },
@@ -123,6 +131,7 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
         data: {
           name: 'Symbol',
           alt: '(global|window|self).Symbol',
+          corejs: 'symbol',
         },
       }],
     },

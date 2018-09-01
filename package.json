@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-transform-runtime-aliasing",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ESLint plugin for checking functions that is aliased/polyfilled by babel-plugin-transform-runtime",
   "keywords": [
     "eslint",
@@ -12,11 +12,11 @@
   "repository": "ylemkimon/eslint-plugin-transform-runtime-aliasing",
   "license": "MIT",
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.0.0-rc.1",
+    "@babel/plugin-transform-runtime": "^7.0.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0"
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   },
   "peerDependencies": {
     "eslint": "^4 || ^5"

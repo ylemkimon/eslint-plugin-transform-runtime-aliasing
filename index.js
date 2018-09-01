@@ -19,7 +19,7 @@ module.exports = {
         }],
         messages: {
           aliased: "'{{ name }}' will be aliased/polyfilled to core-js by Babel, which may be expensive. To prevent aliasing, use '{{ alt }}'.",
-          noAliased: "'{{ name }}' will not be aliased/polyfilled to core-js by Babel. To alias it, enable 'babel-plugin-transform-runtime'.",
+          noAliased: "'{{ name }}' will not be aliased/polyfilled to core-js by Babel. To polyfill it, use 'core-js@2/library/fn/{{ corejs }}'.",
         },
       },
 
@@ -66,6 +66,7 @@ module.exports = {
                     data: {
                       name: builtin,
                       alt: `(global|window|self).${builtin}`,
+                      corejs: builtins[builtin],
                     },
                   });
                 });
@@ -88,6 +89,7 @@ module.exports = {
               data: {
                 name: `${object}.${property}`,
                 alt: `${object}["${property}"]`,
+                corejs: methods[object][property],
               },
             });
           },
