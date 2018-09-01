@@ -14,6 +14,12 @@ module.exports = {
             transformEnabled: {
               type: 'boolean',
             },
+            ignore: {
+              type: 'array',
+              items: {
+                type: 'string',
+              },
+            },
           },
           additionalProperties: false,
         }],
@@ -27,6 +33,7 @@ module.exports = {
         const options = context.options[0] || {};
         const babelVersion = options.babelVersion;
         const transformEnabled = options.transformEnabled != null ? options.transformEnabled : true;
+        const ignore = options.ignore || [];
         const messageId = transformEnabled ? 'aliased' : 'noAliased';
 
         let definitions;
@@ -58,7 +65,7 @@ module.exports = {
             const globalScope = context.getScope();
             Object.keys(builtins).forEach((builtin) => {
               const variable = globalScope.set.get(builtin);
-              if (variable && variable.defs.length === 0) {
+              if (variable && variable.defs.length === 0 && ignore.indexOf(builtin) === -1) {
                 variable.references.forEach((ref) => {
                   context.report({
                     node: ref.identifier,
@@ -79,7 +86,8 @@ module.exports = {
             const property = node.property.name;
             if (node.computed
                 || !Object.prototype.hasOwnProperty.call(methods, object)
-                || !Object.prototype.hasOwnProperty.call(methods[object], property)) {
+                || !Object.prototype.hasOwnProperty.call(methods[object], property)
+                || ignore.indexOf(`${object}.${property}`) !== -1) {
               return;
             }
 

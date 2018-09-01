@@ -39,6 +39,14 @@ ruleTester.run('no-transform-runtime-corejs', rule, {
       code: 'map = new global["Map"]();',
       options: [{ babelVersion: 7 }],
     },
+    {
+      code: 'var object = Object.assign({});',
+      options: [{ ignore: ['Object.assign'] }],
+    },
+    {
+      code: 'var symbol = Symbol();',
+      options: [{ ignore: ['Symbol'] }],
+    },
   ],
   invalid: [
     {

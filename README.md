@@ -36,6 +36,7 @@ If `true` (default), the message will be "'{{ name }}' will be aliased/polyfille
 core-js by Babel, which may be expensive. To prevent aliasing, use '{{ alt }}'.".
 If `false`, the message will be "'{{ name }}' will not be aliased/polyfilled to
 core-js by Babel. To polyfill it, use 'core-js@2/library/fn/{{ corejs }}'.".
+* `ignore`: `string[]`, the list of functions to globally ignore warnings.
 
 ## License
 MIT License
