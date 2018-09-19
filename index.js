@@ -57,6 +57,9 @@ module.exports = {
         if (!definitions) {
           throw error;
         }
+        if (typeof definitions === 'function') {
+          definitions = definitions();
+        }
         const methods = definitions.methods;
         const builtins = definitions.builtins;
 
